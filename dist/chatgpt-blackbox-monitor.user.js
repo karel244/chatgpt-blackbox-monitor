@@ -3,6 +3,8 @@
 // @namespace    local.chatgpt-blackbox-monitor
 // @version      1.1.0
 // @description  Page-observable evidence only; no authentication or chat content storage.
+// @homepageURL  https://github.com/karel244/chatgpt-blackbox-monitor
+// @supportURL   https://github.com/karel244/chatgpt-blackbox-monitor/issues
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
 // @run-at       document-start

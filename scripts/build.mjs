@@ -9,6 +9,8 @@ const header = `// ==UserScript==
 // @namespace    local.chatgpt-blackbox-monitor
 // @version      ${pkg.version}
 // @description  Page-observable evidence only; no authentication or chat content storage.
+// @homepageURL  https://github.com/karel244/chatgpt-blackbox-monitor
+// @supportURL   https://github.com/karel244/chatgpt-blackbox-monitor/issues
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
 ${synthetic ? "// @match        http://127.0.0.1:43997/*\n" : ""}// @run-at       document-start

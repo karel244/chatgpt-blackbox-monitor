@@ -16,14 +16,16 @@ A Tampermonkey userscript for inspecting model requests, publicly exposed routes
 
 1. 安装并启用 [官方 Tampermonkey](https://www.tampermonkey.net/)。
 2. 确认浏览器允许用户脚本。Chromium 上按当前设置开启 **Allow User Scripts** 或 **Developer Mode**；不同版本/浏览器的入口可能不同，见 [官方执行权限说明](https://www.tampermonkey.net/faq.php?ext=fcmf&q=Q209&updated=true&version=4.19.6175)。
-3. 下载本项目的 [chatgpt-blackbox-monitor.user.js](dist/chatgpt-blackbox-monitor.user.js)，在 Tampermonkey 管理面板的实用工具中从文件导入，确认保存并启用。使用者无需 Node、clone 或 build。
+3. 下载本项目的 [chatgpt-blackbox-monitor.user.js](https://raw.githubusercontent.com/karel244/chatgpt-blackbox-monitor/main/dist/chatgpt-blackbox-monitor.user.js)，在 Tampermonkey 管理面板的实用工具中从文件导入，确认保存并启用。使用者无需 Node、clone 或 build。
 4. 打开/刷新 ChatGPT，发送一条新消息，查看页面上的小胶囊。
 
-**Online install link will be added after the repository URL is known.** 当前相对链接指向包内正式脚本；在线安装入口待仓库地址确定后添加。
+**在线安装 / Online install:** [production userscript Raw](https://raw.githubusercontent.com/karel244/chatgpt-blackbox-monitor/main/dist/chatgpt-blackbox-monitor.user.js)。若浏览器未打开 Tampermonkey 安装页，可下载后按上述方式从文件导入。
+
+[Repository](https://github.com/karel244/chatgpt-blackbox-monitor) · [Issues](https://github.com/karel244/chatgpt-blackbox-monitor/issues) · [Releases](https://github.com/karel244/chatgpt-blackbox-monitor/releases)
 
 没有入口时：检查 Tampermonkey 与脚本是否启用→检查用户脚本执行权限→刷新 ChatGPT。看到胶囊表示界面存在，不能单凭它证明所有捕获器已经就绪。
 
-**English quick start:** Install official Tampermonkey, enable user-script execution as required by your browser, import the linked production `.user.js` from a file, then refresh ChatGPT and send a new message. Click the capsule to open the panel. Switch Language to English under **··· → Settings**. No build tools are needed. Official online install links will be added only after a real repository/release exists.
+**English quick start:** Install official Tampermonkey, enable user-script execution as required by your browser, import the linked production `.user.js` from a file, then refresh ChatGPT and send a new message. Click the capsule to open the panel. Switch Language to English under **··· → Settings**. No build tools are needed. The official production Raw install link is provided above; file import remains available.
 
 ## 截图
 
@@ -91,13 +93,13 @@ Evidence ZIP 包含 manifest、summary、timeline、network、environment、comp
 
 ## 更新 / 卸载
 
-**首次公开版采用手动更新**，自动更新未正式验证。后续从实际官方 Release 获取 production `.user.js`，核对 hash，在 Tampermonkey 导入/替换并刷新页面；安装时核对已有脚本，避免重复启用。当前 package、userscript 和导出 tool version 已统一为 `1.1.0`。
+**首次公开版采用手动更新**，自动更新未正式验证。后续从[官方 Releases](https://github.com/karel244/chatgpt-blackbox-monitor/releases)获取 production `.user.js`，核对 hash，在 Tampermonkey 导入/替换并刷新页面；安装时核对已有脚本，避免重复启用。当前 package、userscript 和导出 tool version 已统一为 `1.1.0`。
 
 卸载：如需清理本地证据，先按实际 Clear 范围操作，再在 Tampermonkey 删除 userscript、刷新 ChatGPT。已下载 ZIP 自行删除；Hide/Pause 不清 GM 历史，Clear all 保留 UI preferences。
 
 ## 报 Issue
 
-仓库/Issues URL 尚未确定。建议提供：脚本版本/hash、浏览器与版本、Tampermonkey 版本、语言、复现步骤、期望/实际结果，必要时提供裁去聊天区与账号信息的截图。
+请在[官方 Issues](https://github.com/karel244/chatgpt-blackbox-monitor/issues)反馈问题。建议提供：脚本版本/hash、浏览器与版本、Tampermonkey 版本、语言、复现步骤、期望/实际结果，必要时提供裁去聊天区与账号信息的截图。
 
 **不要上传 Cookie、Authorization、token、原始 HAR 或真实 Prompt/Answer。** Evidence ZIP 可选且分享前人工检查；疑似秘密不要公开提交。发布者需确定安全反馈渠道。
 
@@ -117,6 +119,6 @@ Authenticated Chat/Work：**Not validated**。Native BFCache restore：**Not val
 
 ## License
 
-**License: MIT.** 本项目采用 [MIT License](LICENSE)。实际仓库/在线安装链接待发布前补齐。
+**License: MIT.** 本项目采用 [MIT License](LICENSE)。[Repository](https://github.com/karel244/chatgpt-blackbox-monitor) 与[在线安装链接](https://raw.githubusercontent.com/karel244/chatgpt-blackbox-monitor/main/dist/chatgpt-blackbox-monitor.user.js)已确定。
 
 来源审计已通过；项目 License 为 MIT。此包是准备好的仓库 staging，不代表已发布。见[来源审计](docs/LICENSE_AUDIT.md)。
