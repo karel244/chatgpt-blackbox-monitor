@@ -1,5 +1,7 @@
 # Public repository privacy audit
 
+> Historical packaging audit: the findings below describe that audit stage. The project now has an [MIT License](../LICENSE), [public repository](https://github.com/karel244/chatgpt-blackbox-monitor) and published [v1.1.0 Release](https://github.com/karel244/chatgpt-blackbox-monitor/releases/tag/v1.1.0). Original audit findings are retained.
+
 **Privacy scan: PASS.** No actual secret, account identity, authenticated chat body or local absolute environment path was identified in the reviewed public payload. This is a bounded static and visual audit, not a guarantee about future exports or user-supplied evidence.
 
 ## Scope and method

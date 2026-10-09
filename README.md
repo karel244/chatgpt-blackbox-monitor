@@ -1,22 +1,31 @@
 # ChatGPT Blackbox Monitor
 
-一个 Tampermonkey userscript，用于观察 ChatGPT 网页端可见的模型请求、服务器公开路由、思考强度、网络和环境证据。
+在 ChatGPT 网页查看模型请求、公开路由、思考强度与网络证据的 Tampermonkey 用户脚本。
 
-A Tampermonkey userscript for inspecting model requests, publicly exposed routes, thinking effort, network and environment evidence on ChatGPT web pages.
+A Tampermonkey userscript for browser-visible ChatGPT routing, requested models, thinking effort and network debugging.
 
-**Version 1.1.0 · 简体中文 / English**
+**[Install v1.1.0 / 下载脚本](https://github.com/karel244/chatgpt-blackbox-monitor/releases/download/v1.1.0/chatgpt-blackbox-monitor.user.js)** · [Latest Release](https://github.com/karel244/chatgpt-blackbox-monitor/releases/latest) · [Raw userscript](https://raw.githubusercontent.com/karel244/chatgpt-blackbox-monitor/main/dist/chatgpt-blackbox-monitor.user.js) · [Tampermonkey](https://www.tampermonkey.net/) · [Issues](https://github.com/karel244/chatgpt-blackbox-monitor/issues) · [Documentation](docs/USER_GUIDE.md)
 
-![合成演示：日常悬浮胶囊](docs/screenshots/github-launcher.png)
+[![Release](https://img.shields.io/github/v/release/karel244/chatgpt-blackbox-monitor?label=release)](https://github.com/karel244/chatgpt-blackbox-monitor/releases/latest) [![MIT License](https://img.shields.io/badge/license-MIT-blue)](LICENSE) [![Tampermonkey userscript](https://img.shields.io/badge/Tampermonkey-userscript-00897b)](https://www.tampermonkey.net/)
 
-能看：请求模型、已观察到的服务器声明、路由判定、请求思考强度、HTTP/传输状态、当前环境和本地历史。
+下载 Release 脚本 → 在 Tampermonkey 安装/导入 → 刷新 ChatGPT，发送一条新消息。**简体中文 / English · 手动更新 / Manual updates**
 
-不能百分之百证明服务器内部真实模型权重、GPU、worker、隐藏 token、隐藏 reasoning budget 或内部调度。路由一致只表示已观察声明一致；速度、IP、PoW 和前端 build 都不能单独证明降级或后台算力。
+![合成演示 / Synthetic demo: launcher and Route panel](docs/screenshots/github-hero.png)
+
+- **Route / 路由**：公开声明的一致、冲突或未知。
+- **Model / 模型**：请求模型及已观察到的服务器声明。
+- **Thinking effort / 思考强度**：客户端请求声明。
+- **Network / 网络**：HTTP、传输与异常诊断。
+- **History / 本地历史**：查看与导出旧轮次。
+- **Evidence / 证据**：时间线、脱敏 ZIP 与本地 A/B 对比。
+
+**边界 / Limits:** Browser-observable evidence only. Cannot prove hidden model weights, GPU/worker assignment or hidden reasoning budget. 路由一致只表示已观察声明一致；Unknown 不等于降级。
 
 ## 安装 / Install
 
 1. 安装并启用 [官方 Tampermonkey](https://www.tampermonkey.net/)。
 2. 确认浏览器允许用户脚本。Chromium 上按当前设置开启 **Allow User Scripts** 或 **Developer Mode**；不同版本/浏览器的入口可能不同，见 [官方执行权限说明](https://www.tampermonkey.net/faq.php?ext=fcmf&q=Q209&updated=true&version=4.19.6175)。
-3. 下载本项目的 [chatgpt-blackbox-monitor.user.js](https://raw.githubusercontent.com/karel244/chatgpt-blackbox-monitor/main/dist/chatgpt-blackbox-monitor.user.js)，在 Tampermonkey 管理面板的实用工具中从文件导入，确认保存并启用。使用者无需 Node、clone 或 build。
+3. 下载 [v1.1.0 Release 脚本](https://github.com/karel244/chatgpt-blackbox-monitor/releases/download/v1.1.0/chatgpt-blackbox-monitor.user.js)（[Raw 备用入口](https://raw.githubusercontent.com/karel244/chatgpt-blackbox-monitor/main/dist/chatgpt-blackbox-monitor.user.js)），在 Tampermonkey 管理面板的实用工具中从文件导入，确认保存并启用。使用者无需 Node、clone 或 build。
 4. 打开/刷新 ChatGPT，发送一条新消息，查看页面上的小胶囊。
 
 **在线安装 / Online install:** [production userscript Raw](https://raw.githubusercontent.com/karel244/chatgpt-blackbox-monitor/main/dist/chatgpt-blackbox-monitor.user.js)。若浏览器未打开 Tampermonkey 安装页，可下载后按上述方式从文件导入。
@@ -25,7 +34,7 @@ A Tampermonkey userscript for inspecting model requests, publicly exposed routes
 
 没有入口时：检查 Tampermonkey 与脚本是否启用→检查用户脚本执行权限→刷新 ChatGPT。看到胶囊表示界面存在，不能单凭它证明所有捕获器已经就绪。
 
-**English quick start:** Install official Tampermonkey, enable user-script execution as required by your browser, import the linked production `.user.js` from a file, then refresh ChatGPT and send a new message. Click the capsule to open the panel. Switch Language to English under **··· → Settings**. No build tools are needed. The official production Raw install link is provided above; file import remains available.
+**English quick start:** Install official Tampermonkey, enable user-script execution as required by your browser, import the linked production `.user.js` from a file, then refresh ChatGPT and send a new message. Click the capsule to open the panel. Switch Language to English under **··· → Settings**. No build tools are needed. Download the v1.1.0 Release asset from the Install link above. If no Tampermonkey install screen opens, import the downloaded file manually. Raw is an alternative; automatic updates are not validated.
 
 ## 截图
 
@@ -105,7 +114,7 @@ Evidence ZIP 包含 manifest、summary、timeline、network、environment、comp
 
 ## 已验证范围 / Limitations
 
-性能修复产品基线已通过 Chrome/Edge + official Tampermonkey 5.5.0 的合成捕获、UI、Unknown 长运行与 DOM 稳定性验收。公开版已重新通过完整 Static/Node 和构建检查，生产字节保持不变；公开测试集小于内部完整验收集，当前数量见[包装报告](docs/GITHUB_PUBLIC_RELEASE_PACKAGING_REPORT.md)。没有把基线浏览器结果当作新一轮登录态实测。
+性能修复产品基线已通过 Chrome/Edge + official Tampermonkey 5.5.0 的合成捕获、UI、Unknown 长运行与 DOM 稳定性验收。功能逻辑未变；公开 metadata 更新后已重新通过 format/lint/typecheck、unit 141/141、integration 55/55、production build 与 synthetic build；公开测试集小于内部完整验收集，当前数量见[包装报告](docs/GITHUB_PUBLIC_RELEASE_PACKAGING_REPORT.md)。没有把基线浏览器结果当作新一轮登录态实测。
 
 Real-user live smoke: preliminary positive feedback after performance-fixed RC.
 
@@ -121,4 +130,4 @@ Authenticated Chat/Work：**Not validated**。Native BFCache restore：**Not val
 
 **License: MIT.** 本项目采用 [MIT License](LICENSE)。[Repository](https://github.com/karel244/chatgpt-blackbox-monitor) 与[在线安装链接](https://raw.githubusercontent.com/karel244/chatgpt-blackbox-monitor/main/dist/chatgpt-blackbox-monitor.user.js)已确定。
 
-来源审计已通过；项目 License 为 MIT。此包是准备好的仓库 staging，不代表已发布。见[来源审计](docs/LICENSE_AUDIT.md)。
+来源审计已通过；项目 License 为 MIT。[v1.1.0 Release](https://github.com/karel244/chatgpt-blackbox-monitor/releases/tag/v1.1.0) 已发布。见[来源审计](docs/LICENSE_AUDIT.md)。

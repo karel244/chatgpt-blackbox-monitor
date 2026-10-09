@@ -1,5 +1,7 @@
 # License and source audit
 
+> Historical packaging audit: the findings below describe that audit stage. The project now has an [MIT License](../LICENSE), [public repository](https://github.com/karel244/chatgpt-blackbox-monitor) and published [v1.1.0 Release](https://github.com/karel244/chatgpt-blackbox-monitor/releases/tag/v1.1.0). Original audit findings are retained.
+
 **LICENSE DECISION REQUIRED. Recommended: MIT**, subject to the publisher confirming authorship/rights and choosing the license. A permissive license is suitable for this small independently developed userscript; [MIT terms](https://opensource.org/license/mit) require retaining copyright/permission notices when redistributing covered code. This is a recommendation, not an adopted license or a legal clearance. No project LICENSE or package license field has been created.
 
 ## Scope and result

@@ -34,6 +34,6 @@ Production `chatgpt-blackbox-monitor.user.js`:
 b551a2a578666b72aff678adb6f77d6698a14640f6ad47a20930066ead77592c
 ```
 
-The [GitHub repository](https://github.com/karel244/chatgpt-blackbox-monitor) has been created. The project uses the [MIT License](../LICENSE), which has been added. The [Releases page](https://github.com/karel244/chatgpt-blackbox-monitor/releases) is available; this does not claim that a v1.1.0 Release has been published.
+The [GitHub repository](https://github.com/karel244/chatgpt-blackbox-monitor) has been created. The project uses the [MIT License](../LICENSE), which has been added. The [v1.1.0 Release](https://github.com/karel244/chatgpt-blackbox-monitor/releases/tag/v1.1.0) is published; use its production userscript asset for manual installation.
 
 **Public source-provenance audit: PASS.** The uncertain monitor test file is omitted from v2 distribution; see [LICENSE_AUDIT](LICENSE_AUDIT.md). MIT License and repository URLs are confirmed above.

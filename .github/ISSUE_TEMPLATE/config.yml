@@ -1,1 +1,8 @@
 blank_issues_enabled: false
+contact_links:
+  - name: Install & usage / 安装与使用
+    url: https://github.com/karel244/chatgpt-blackbox-monitor/blob/main/docs/USER_GUIDE.md
+    about: Read the guide for installation, Unknown/Partial and common controls before filing a bug.
+  - name: Known limitations / 已知限制
+    url: https://github.com/karel244/chatgpt-blackbox-monitor/blob/main/docs/KNOWN_LIMITATIONS.md
+    about: Check observed-evidence boundaries; never share credentials, raw HAR or real chat content.

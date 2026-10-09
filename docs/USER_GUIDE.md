@@ -4,7 +4,7 @@
 
 ## 安装与最常用流程
 
-在 Chrome/Edge 安装[官方 Tampermonkey](https://www.tampermonkey.net/)，确认允许用户脚本；按浏览器实际设置使用 Allow User Scripts 或 Developer Mode，见[官方权限帮助](https://www.tampermonkey.net/faq.php?ext=fcmf&q=Q209&updated=true&version=4.19.6175)。导入包内 `dist/chatgpt-blackbox-monitor.user.js`、保存并启用，刷新 ChatGPT。Tampermonkey Blackbox 业务菜单为 0。
+在 Chrome/Edge 安装[官方 Tampermonkey](https://www.tampermonkey.net/)，确认允许用户脚本；按浏览器实际设置使用 Allow User Scripts 或 Developer Mode，见[官方权限帮助](https://www.tampermonkey.net/faq.php?ext=fcmf&q=Q209&updated=true&version=4.19.6175)。从 [v1.1.0 Release 下载脚本](https://github.com/karel244/chatgpt-blackbox-monitor/releases/download/v1.1.0/chatgpt-blackbox-monitor.user.js)，在 Tampermonkey 导入、保存并启用，刷新 ChatGPT。Tampermonkey Blackbox 业务菜单为 0。
 
 **打开 ChatGPT → 发一条新消息并等回答 → 看胶囊；有异常或要查看来源再打开面板。** 暂无可展示对话时，会在胶囊 tooltip/Main 说明提示首次动作。已有 conversation 但缺充分 A 级服务器路由时仍可未知，发送新消息不保证解决。
 
@@ -90,13 +90,13 @@ Export ZIP 在本机下载七文件 Evidence Bundle。包内有 manifest、summa
 
 请求/响应可能被瞬时解析以提取白名单字段，不持久保存完整 Prompt/Answer，不主动采集认证 Cookie/Authorization/token。脱敏不等于绝对匿名；分享 Evidence ZIP 前人工检查仍含的时间/模型/路由/网络/环境线索。安全 Issue 字段和禁止上传的内容见[README](../README.md#报-issue)。
 
-首次公开版采用**手动更新**，不宣称自动更新已验证；从确定的官方来源获取 production 脚本，核对 hash、在 Tampermonkey 替换并刷新，避免重复启用。Repository/Release URL 尚未确定，见[发布清单](GITHUB_RELEASE_CHECKLIST.md)。
+首次公开版采用**手动更新**，不宣称自动更新已验证；从确定的官方来源获取 production 脚本，核对 hash、在 Tampermonkey 替换并刷新，避免重复启用。官方入口：[Repository](https://github.com/karel244/chatgpt-blackbox-monitor) / [Latest Release](https://github.com/karel244/chatgpt-blackbox-monitor/releases/latest)，见[发布清单](GITHUB_RELEASE_CHECKLIST.md)。
 
 卸载时如需清证据，先按实际范围 Clear，再在 Tampermonkey 删除脚本、刷新 ChatGPT；下载文件另行删除，Clear all 保留 UI 偏好。
 
 ## 验证范围与限制
 
-产品基线经过 Chrome/Edge + official Tampermonkey 5.5.0 合成验收；公开 v2 仅裁剪来源未确认的测试文件并同步文档；生产源码与脚本字节不变，Static/Node 与两种构建均重新通过。浏览器验收来源和本次检查范围分别列在[包装报告](GITHUB_PUBLIC_RELEASE_PACKAGING_REPORT.md)。
+产品基线经过 Chrome/Edge + official Tampermonkey 5.5.0 合成验收；公开 v2 裁剪了来源未确认的测试文件；后续公开 metadata 更新未改变功能逻辑，并已重新通过 format/lint/typecheck/unit 141/141/integration 55/55/production build/synthetic build。早期包装检查范围列在[历史包装报告](GITHUB_PUBLIC_RELEASE_PACKAGING_REPORT.md)。
 
 Real-user live smoke: preliminary positive feedback after performance-fixed RC.
 

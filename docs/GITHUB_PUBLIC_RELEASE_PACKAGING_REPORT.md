@@ -1,5 +1,7 @@
 # GitHub public release packaging report — v2
 
+> Historical packaging audit: the findings below describe that audit stage. The project now has an [MIT License](../LICENSE), [public repository](https://github.com/karel244/chatgpt-blackbox-monitor) and published [v1.1.0 Release](https://github.com/karel244/chatgpt-blackbox-monitor/releases/tag/v1.1.0). Original audit findings are retained.
+
 Date: 2026-10-08. Product version: **1.1.0**. Distribution revision: **public-ready-v2**.
 
 **SOURCE PROVENANCE RELEASE BLOCKER PASS. READY FOR REPOSITORY CREATION: YES.**

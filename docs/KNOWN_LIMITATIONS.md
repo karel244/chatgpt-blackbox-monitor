@@ -9,6 +9,6 @@
 - History views use a restored snapshot; leave and re-enter to refresh newly stored captures. Export/import can fail safely when structures, digests or budgets are invalid.
 - Performance improved for the frozen workload, not every future page. UI refresh and bounded persistence/compaction still cost time. Edge retained a 56 ms long task; Pause transitions retained individual control-write long tasks. See [performance](PERFORMANCE.md).
 - Redaction does not guarantee anonymity. Time, model, route, network and environment clues remain. Tampermonkey storage is not an encrypted vault, and extension/browser sync is outside this tool's guarantee.
-- Manual update is the supported initial release workflow; automatic-update metadata, repository URL, project license and a private security contact are pending setup.
+- Manual update is the supported initial release workflow; automatic updates remain unvalidated and a private security contact is pending setup. The [public repository](https://github.com/karel244/chatgpt-blackbox-monitor) and [MIT License](../LICENSE) are established.
 
 Real-user live smoke: preliminary positive feedback after performance-fixed RC.
