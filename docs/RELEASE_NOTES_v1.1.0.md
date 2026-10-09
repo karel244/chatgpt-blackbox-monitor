@@ -10,7 +10,7 @@ Minimal launcher → Main → non-modal Workbench; Chinese/English; default Rout
 
 ## Install
 
-Install official Tampermonkey and enable user-script execution. Import [production .user.js](../dist/chatgpt-blackbox-monitor.user.js), refresh ChatGPT and send a new message. Online install link will be added after the repository URL is known. Initial updating is manual.
+Install official Tampermonkey and enable user-script execution. Import [production .user.js](../dist/chatgpt-blackbox-monitor.user.js), refresh ChatGPT and send a new message. Online installation: [production Raw userscript](https://raw.githubusercontent.com/karel244/chatgpt-blackbox-monitor/main/dist/chatgpt-blackbox-monitor.user.js). Initial updating is manual.
 
 ## Privacy
 
@@ -22,7 +22,7 @@ Unknown/Partial remain explicit. Storage budgets and protocol coverage apply. Au
 
 ## Verified environments
 
-Product baseline: synthetic Chrome/Edge + official Tampermonkey 5.5.0 capture, UI, Unknown long-run and DOM stability validation. Public v2 packaging: full Static/Node checks and production/synthetic builds repeated; unit 141/141 and integration 55/55 passed. One uncertain 14-test file is omitted from distribution. All production source and dist bytes are unchanged from the 1.1.0 input package. No new authenticated validation is claimed.
+Product baseline: synthetic Chrome/Edge + official Tampermonkey 5.5.0 capture, UI, Unknown long-run and DOM stability validation. Public v2 packaging: full Static/Node checks and production/synthetic builds repeated; unit 141/141 and integration 55/55 passed. One uncertain 14-test file is omitted from distribution. Functional logic is unchanged. After adding public @homepageURL/@supportURL metadata, format/lint/typecheck, unit 141/141, integration 55/55, production build and synthetic build all passed again. No new authenticated validation is claimed.
 
 Real-user live smoke: preliminary positive feedback after performance-fixed RC.
 
@@ -31,9 +31,9 @@ Real-user live smoke: preliminary positive feedback after performance-fixed RC.
 Production `chatgpt-blackbox-monitor.user.js`:
 
 ```text
-704ddc588b8b946ea0114627d0c61db25eea723818ea3608c51a2afa94b4e50f
+b551a2a578666b72aff678adb6f77d6698a14640f6ad47a20930066ead77592c
 ```
 
-License decision required before public release; repository URL required. These are release-note drafts for the publisher, not an announcement that GitHub publication occurred.
+The [GitHub repository](https://github.com/karel244/chatgpt-blackbox-monitor) has been created. The project uses the [MIT License](../LICENSE), which has been added. The [Releases page](https://github.com/karel244/chatgpt-blackbox-monitor/releases) is available; this does not claim that a v1.1.0 Release has been published.
 
-**Public source-provenance audit: PASS.** The uncertain monitor test file is omitted from v2 distribution; see [LICENSE_AUDIT](LICENSE_AUDIT.md). License selection and repository URLs remain pending.
+**Public source-provenance audit: PASS.** The uncertain monitor test file is omitted from v2 distribution; see [LICENSE_AUDIT](LICENSE_AUDIT.md). MIT License and repository URLs are confirmed above.

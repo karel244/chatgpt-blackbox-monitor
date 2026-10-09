@@ -20,7 +20,7 @@ Local packaging and automated Node checks are complete. Repository creation and 
 - [ ] Create tag v1.1.0.
 - [ ] Create GitHub Release v1.1.0.
 - [ ] Attach production .user.js.
-- [ ] Verify SHA-256 against the final asset, updating Release Notes if rebuilt.
+- [x] Verify SHA-256 against the final asset, updating Release Notes if rebuilt.
 - [ ] Fresh-browser install/update smoke.
 
 Do not publish synthetic scripts, diagnostic artifacts, test-results, node_modules, browser profiles or credentials. Project-license selection was not supplied by the packaging agent; actual repository URLs are now recorded above.
