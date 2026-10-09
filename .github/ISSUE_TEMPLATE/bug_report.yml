@@ -1,0 +1,59 @@
+name: Bug report
+description: Report a reproducible problem using synthetic or sanitized information.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Do not upload cookies, Authorization headers, tokens, raw HAR, or real chat content. Inspect Evidence ZIPs manually before sharing."
+  - type: input
+    id: script_version
+    attributes:
+      label: Script version
+      description: Version shown in Tampermonkey; include asset hash if available.
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+    validations:
+      required: true
+  - type: input
+    id: tampermonkey
+    attributes:
+      label: Tampermonkey version
+    validations:
+      required: true
+  - type: dropdown
+    id: language
+    attributes:
+      label: UI language
+      options:
+        - 简体中文
+        - English
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Use a minimal synthetic description; omit real prompts and account data.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Optional sanitized screenshot
+      description: Crop out the ChatGPT chat area, account details, URLs with IDs, and unrelated browser content.

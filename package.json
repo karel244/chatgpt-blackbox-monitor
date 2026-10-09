@@ -1,0 +1,31 @@
+{
+  "name": "chatgpt-blackbox-monitor",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write src tests scripts *.json *.mjs",
+    "format:check": "prettier --check src tests scripts *.json *.mjs",
+    "lint": "eslint src tests scripts",
+    "typecheck": "tsc --noEmit",
+    "test:unit": "node --import tsx --test tests/unit/*.test.ts",
+    "test:integration": "node --import tsx --test tests/integration/*.test.ts",
+    "test:browser": "node tests/browser/p1.mjs",
+    "build": "node scripts/build.mjs",
+    "build:synthetic": "node scripts/build.mjs --synthetic",
+    "verify": "node scripts/verify.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.29.0",
+    "@playwright/test": "1.62.1",
+    "@types/node": "22.15.32",
+    "@types/ws": "8.18.1",
+    "esbuild": "0.28.2",
+    "eslint": "9.29.0",
+    "prettier": "3.9.9",
+    "tsx": "4.20.5",
+    "typescript": "5.8.3",
+    "typescript-eslint": "8.34.1",
+    "ws": "8.18.3"
+  }
+}

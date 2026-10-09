@@ -1,0 +1,39 @@
+# ChatGPT Blackbox Monitor 1.1.0
+
+## What it does
+
+Observes browser-visible ChatGPT requested models, explicit route declarations, request thinking effort, network/environment facts and local conversation history. It cannot prove internal model weights, hidden reasoning or server scheduling.
+
+## Highlights
+
+Minimal launcher → Main → non-modal Workbench; Chinese/English; default Route; independent proportional scaling; bounded local History and redacted evidence bundles; local A/B comparison. Unknown display drift and repeated unchanged History persistence were fixed in the validated product baseline. Public version metadata is now unified at 1.1.0.
+
+## Install
+
+Install official Tampermonkey and enable user-script execution. Import [production .user.js](../dist/chatgpt-blackbox-monitor.user.js), refresh ChatGPT and send a new message. Online install link will be added after the repository URL is known. Initial updating is manual.
+
+## Privacy
+
+No telemetry/automatic upload path; no persistence of full prompts/answers or authentication values. Local exports retain some contextual clues. Inspect before sharing; never upload credentials, raw HAR or real chat text.
+
+## Known limitations
+
+Unknown/Partial remain explicit. Storage budgets and protocol coverage apply. Authenticated Chat/Work and native BFCache restore are not comprehensively validated. See [known limitations](KNOWN_LIMITATIONS.md).
+
+## Verified environments
+
+Product baseline: synthetic Chrome/Edge + official Tampermonkey 5.5.0 capture, UI, Unknown long-run and DOM stability validation. Public v2 packaging: full Static/Node checks and production/synthetic builds repeated; unit 141/141 and integration 55/55 passed. One uncertain 14-test file is omitted from distribution. All production source and dist bytes are unchanged from the 1.1.0 input package. No new authenticated validation is claimed.
+
+Real-user live smoke: preliminary positive feedback after performance-fixed RC.
+
+## SHA-256
+
+Production `chatgpt-blackbox-monitor.user.js`:
+
+```text
+704ddc588b8b946ea0114627d0c61db25eea723818ea3608c51a2afa94b4e50f
+```
+
+License decision required before public release; repository URL required. These are release-note drafts for the publisher, not an announcement that GitHub publication occurred.
+
+**Public source-provenance audit: PASS.** The uncertain monitor test file is omitted from v2 distribution; see [LICENSE_AUDIT](LICENSE_AUDIT.md). License selection and repository URLs remain pending.

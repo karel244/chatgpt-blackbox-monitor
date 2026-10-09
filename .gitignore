@@ -1,0 +1,15 @@
+node_modules/
+test-results/
+coverage/
+.browser-profiles/
+browser-profiles/
+tmp/
+.temp/
+*.local
+*.zip
+*perf-diagnostic*.user.js
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
